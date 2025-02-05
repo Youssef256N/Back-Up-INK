@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>October 6 University Medical Books</title>
+  <!-- Optional: Google Fonts for a more classic feel -->
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700|Roboto:400,700&display=swap" rel="stylesheet">
+  <style>
+    /* Global Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #F7F3EC; /* Warm, light background reminiscent of aged paper */
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      /* New blue gradient */
+      background: linear-gradient(135deg, #2C3E50, #2980B9);
+      color: #fff;
+      margin-bottom: 30px;
+    }
+    header h1 {
+      font-family: 'Merriweather', serif;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.2rem;
+      font-style: italic;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .form-section {
+      margin-bottom: 30px;
+    }
+    .form-section label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #4A4A4A;
+    }
+    .form-section select,
+    .form-section button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    .form-section select {
+      background-color: #fff;
+      color: #333;
+    }
+    .form-section button {
+      /* New blue button color */
+      background-color: #2980B9;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .form-section button:hover {
+      background-color: #2471A3;
+    }
+    #message {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      color: #B71C1C;
+    }
+    #bookList {
+      display: none;
+      margin-top: 20px;
+    }
+    #bookList h2 {
+      text-align: center;
+      font-family: 'Merriweather', serif;
+      margin-bottom: 20px;
+      color: #2C3E50;
+    }
+    .subject-card {
+      background-color: #F8F9FA;
+      /* Blue accent for border */
+      border-left: 4px solid #2980B9;
+      padding: 15px;
+      border-radius: 4px;
+      margin-bottom: 15px;
+    }
+    .subject-card h3 {
+      margin-bottom: 5px;
+      font-family: 'Merriweather', serif;
+      color: #2C3E50;
+    }
+    .subject-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+    .package-info {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #2C3E50;
+    }
+    .form-button {
+      display: block;
+      width: 260px;
+      margin: 30px auto;
+      padding: 12px;
+      text-align: center;
+      /* New blue button style */
+      background: #2980B9;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+    .form-button:hover {
+      background: #2471A3;
+    }
+    .backup-ink {
+      background: #ECF0F1;
+      border: 1px solid #BDC3C7;
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 30px;
+      text-align: center;
+      color: #2C3E50;
+    }
+    .backup-ink h2 {
+      font-family: 'Merriweather', serif;
+      color: #2C3E50;
+      margin-bottom: 10px;
+    }
+    .backup-ink p {
+      font-size: 1rem;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <h1>October 6 University Medical Books</h1>
+    <p>Presented by Back Up INK Group</p>
+  </header>
+  
+  <!-- Main Container -->
+  <div class="container">
+    <!-- Form Section -->
+    <div class="form-section">
+      <label for="yearSelect">Choose Year:</label>
+      <select id="yearSelect">
+        <option value="">-- Select Year --</option>
+        <option value="1st Year">1st Year</option>
+        <option value="2nd Year">2nd Year</option>
+        <option value="3rd Year">3rd Year</option>
+        <option value="4th Year">4th Year</option>
+      </select>
+      
+      <label for="semesterSelect">Choose Semester:</label>
+      <select id="semesterSelect">
+        <option value="">-- Select Semester --</option>
+        <option value="1st Semester">1st Semester</option>
+        <option value="2nd Semester">2nd Semester</option>
+      </select>
+      
+      <button id="showBooksBtn">Show Books</button>
+      <div id="message"></div>
+    </div>
+    
+    <!-- Book List Section (only appears for 4th Year and 2nd Semester) -->
+    <div id="bookList">
+      <h2>Available Books for 4th Year, 2nd Semester</h2>
+      <div class="subject-card">
+        <h3>Endocrinology</h3>
+        <p>Includes its MCQ companion.</p>
+      </div>
+      <div class="subject-card">
+        <h3>Pediatrics</h3>
+        <p>Includes its MCQ companion.</p>
+      </div>
+      <div class="subject-card">
+        <h3>Neurology</h3>
+        <p>Includes its MCQ companion.</p>
+      </div>
+      <div class="package-info">
+        Package: 6 Books (3 Subjects &amp; their MCQ books) for EGP 350
+      </div>
+      <!-- Button linking to your Google Form -->
+      <a class="form-button" href="https://forms.gle/h3qvMBofpinSDXzg9" target="_blank">Order Now</a>
+    </div>
+    
+    <!-- Back Up INK Group Section -->
+    <div class="backup-ink">
+      <h2>About Back Up INK Group</h2>
+      <p>
+        Back Up INK is dedicated to supporting educational initiatives and providing quality resources for university students.
+        We empower students with the best study materials to promote academic success.
+      </p>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearSelect = document.getElementById('yearSelect');
+      const semesterSelect = document.getElementById('semesterSelect');
+      const showBooksBtn = document.getElementById('showBooksBtn');
+      const bookList = document.getElementById('bookList');
+      const messageDiv = document.getElementById('message');
+      
+      showBooksBtn.addEventListener('click', function () {
+        const selectedYear = yearSelect.value;
+        const selectedSemester = semesterSelect.value;
+        messageDiv.textContent = "";
+        
+        if (!selectedYear || !selectedSemester) {
+          messageDiv.textContent = "Please select both year and semester.";
+          bookList.style.display = 'none';
+          return;
+        }
+        
+        if (selectedYear === "4th Year" && selectedSemester === "2nd Semester") {
+          bookList.style.display = 'block';
+        } else {
+          bookList.style.display = 'none';
+          messageDiv.textContent = "No books available for the selected year/semester.";
+        }
+      });
+    });
+  </script>
+</body>
+</html>
